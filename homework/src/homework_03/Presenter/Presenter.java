@@ -50,8 +50,6 @@ public class Presenter< V extends View> {
         } while (wokring);
     }
 
-    // по заданию проверяем кол-во введённых данных через возврат кода ошибки при
-    // несоответствии
     private int checkInputDataCount(int inputDataCount) {
         if (inputDataCount < Processing.dataCount) {
             return -1;
@@ -62,7 +60,6 @@ public class Presenter< V extends View> {
         }
     }
     
-    //создаём или подключаемся к фаилу по фамилии и дописываем туда новые данные
     private void writePersonData(Processing data) throws IOException {
         File filepath = new File(data.getLastname());
         try (FileWriter fw = new FileWriter(filepath, true)) {
